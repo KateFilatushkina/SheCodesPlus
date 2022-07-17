@@ -1,0 +1,15 @@
+body {
+  color: #5a6275;
+}
+h3 {
+  display: inline;
+  font-size: 45px;
+  color: black;
+}
+p {
+  font-size: 12px;
+}
+.border {
+  width: 750px;
+  border-radius: inline;
+}
