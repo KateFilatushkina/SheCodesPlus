@@ -8,6 +8,7 @@ h3 {
 }
 p {
   font-size: 12px;
+  text-transform: capitalize;
 }
 .border {
   width: 750px;

@@ -7,14 +7,14 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 let hours = now.getHours();
 //let minutes = now.getMinutes();
 let minutes = String(now.getMinutes()).padStart(2, "0");
 
-p.innerHTML = `${day}<br />${hours}:${minutes}<br />Rain`;
+p.innerHTML = `${day}<br />${hours}:${minutes}`;
 
 function search(event) {
   event.preventDefault("#searchForm");
@@ -62,5 +62,11 @@ tempType.onclick = function () {
 function showWeather(response) {
   let temperatureElement = document.getElementById("temperature");
   let temperature = Math.round(response.data.main.temp);
+  let desription = document.querySelector("#description");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
   temperatureElement.innerHTML = `${temperature}`;
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
